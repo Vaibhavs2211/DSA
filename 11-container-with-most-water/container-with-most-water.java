@@ -6,7 +6,9 @@ class Solution {
         while(left<right){
             int width = right - left;
             int high = Math.min(height[left],height[right]);
+
             int currentArea = width * high;
+              maxArea = Math.max(maxArea,currentArea);
             if(height[left]<=height[right]){
                 left++;
             }
@@ -14,7 +16,7 @@ class Solution {
                 right --;
 
             }
-            maxArea = Math.max(maxArea,currentArea);
+          
         }
         return maxArea;
     }
